@@ -1,0 +1,228 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f9f9f9, #d4eaff);
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s ease;
+}
+
+/* Header */
+header {
+  background: linear-gradient(45deg, #0077b6, #00b4d8);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #00b4d8, 0 0 30px #0077b6;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #00b4d8, 0 0 60px #0077b6;
+  }
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(255,255,255,0.75);
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  animation: slideUp 1s ease-in-out;
+}
+
+.profile img {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+.profile img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.info {
+  max-width: 500px;
+}
+
+.info h2 {
+  color: #023e8a;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects {
+  margin-top: 60px;
+}
+
+.projects h3 {
+  color: #0077b6;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.projects h3::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.project {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: all 0.4s ease;
+  animation: fadeInUp 1.2s ease;
+  position: relative;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-image: linear-gradient(to right, #0077b6, #00b4d8) 1;
+}
+
+.project h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #023e8a;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+.project a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #00b4d8;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to right, #023e8a, #03045e);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 60px;
+  font-size: 1rem;
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .profile {
+    flex-direction: column;
+  }
+
+  .info h2 {
+    text-align: center;
+  }
+
+  .project {
+    width: 100%;
+  }
+}
